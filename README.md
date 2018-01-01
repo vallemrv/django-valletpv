@@ -1,2 +1,2 @@
 # django-valletpv
-TPV para hosteleria en python - Django y python
+TPV para hosteleria en python - Django y Kivy
