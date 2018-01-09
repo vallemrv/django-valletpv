@@ -10,6 +10,7 @@ __pycache__/
 service_web/service_web/
 *.db
 config/
+medida/
 
 # Distribution / packaging
 .Python
