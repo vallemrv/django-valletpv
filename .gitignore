@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+#Achivos no necesarios
+service_web/service_web/
+*.db
+config/
+
 # Distribution / packaging
 .Python
 env/
