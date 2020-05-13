@@ -1,0 +1,49 @@
+#:import Window kivy.core.window.Window
+#:import hex_color kivy.utils.get_color_from_hex
+<SingIn>:
+    name: "sing_in"
+    MDToolbar:
+        id: toolbar
+        title: "Autentificación"
+        pos_hint: {"top": 1}
+    
+    ScrollView:
+        
+        id: scroll
+        size_hint_y: None
+        height: Window.height - toolbar.height
+        BoxLayout:
+            size_hint: 1,None
+            orientation: "vertical"
+            height: self.minimum_height
+            padding: "10dp"
+            spacing: "15dp"
+            MDTextField:
+                hint_text: "Correo"
+                id: username
+            MDTextField:
+                hint_text: "Contraseña"
+                id: password
+                password: True
+            AnchorLayout:
+                BoxLayout:
+                    spacing: "10dp"
+                    size_hint: None, None
+                    size: self.minimum_size
+                    MDFillRoundFlatIconButton:
+                        text: "Registrase"
+                        icon: "account-plus"
+                        md_bg_color: hex_color("#FF007F")
+                        on_release: root.sing_up()
+                    MDFillRoundFlatIconButton:
+                        text: "Entrar"
+                        icon: "account-key"
+                        on_release: root.loggin()
+            AnchorLayout:
+                anchor_y: 'top'
+                padding: "10dp"
+                MDFlatButton:
+                    text: "Recuperar contraseña"
+                    text_color: hex_color("#4EBDF1")
+                    on_release: root.recover_pass()
+            

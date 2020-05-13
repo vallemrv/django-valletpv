@@ -1,0 +1,50 @@
+#:import Window kivy.core.window.Window
+#:import hex_color kivy.utils.get_color_from_hex
+<SingUp>:
+    name:'sing_up'
+    MDToolbar:
+        id: toolbar
+        title: "Registrarse"
+        pos_hint: {"top": 1}
+    
+    ScrollView:
+        
+        id: scroll
+        size_hint_y: None
+        height: Window.height - toolbar.height
+        BoxLayout:
+            size_hint: 1,None
+            orientation: "vertical"
+            height: self.minimum_height
+            padding: "10dp"
+            MDTextField:
+                hint_text: "Correo"
+                id: username
+            MDTextField:
+                hint_text: "Nombre"
+                id: first_name
+            MDTextField:
+                hint_text: "Contraseña"
+                id: password
+                password: True
+            MDTextField:
+                hint_text: "Repetir contraseña"
+                id: repassword
+                password: True
+            Widget:
+
+            BoxLayout:
+                spacing: "10dp"
+                size_hint: None, None
+                size: self.minimum_size
+                pos_hint: {"center_x": .5}
+                MDFillRoundFlatIconButton:
+                    text: "Cancelar"
+                    icon: "cancel"
+                    md_bg_color: hex_color("#FF007F")
+                    on_release: root.cancel()
+                MDFillRoundFlatIconButton:
+                    text: "Registrase"
+                    icon: "check"
+                    on_release: root.singup() if password.text == repassword.text else root.pass_not_match()
+            Widget:

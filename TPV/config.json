@@ -1,0 +1,4 @@
+{"url_main": "http://localhost:8000/", 
+ "credentials": {"token": "5g6-fa3f9adfbbc10b516474", "user": 1, "success": true},
+ "client_port": 3333, "server_port": 33333,
+"url_ws": "ws://localhost:8000/ws/sync"}
